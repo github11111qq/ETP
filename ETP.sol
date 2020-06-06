@@ -111,7 +111,7 @@ returns(uint8 level)
 function getPlayerlaByAddr (address _addr)
 public
 view
-returns(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)
+returns(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)
 {
     uint256 _pID = pIDxAddr_[_addr];
     
@@ -127,7 +127,6 @@ returns(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,
         plyrReward_[_pID].totalAff + _aff,
         totalGenH,
         totalAffH,
-        withDrawSet_[_pID].shengyu,
         plyr_[_pID].baseGen,
         plyr_[_pID].baseAff,
         affBijiao_[zhuoyueRound_][_pID]
@@ -151,8 +150,6 @@ returns(uint256 affid,address addr,uint256 totalBet,uint256 level,uint256 _zypot
     _zypot = playerPot_[_pID].zhuoyuepot;
     _bdpot = playerPot_[_pID].bdpot;
     _luckpot = playerPot_[_pID].luckpot;
-    //withDrawEdGen = plyrReward_[_pID].withDrawEdGen;
-    //withDrawEdAff = plyrReward_[_pID].withDrawEdAff;
     inviteCode = plyr_[_pID].inviteCode;
     affInviteCode =plyr_[plyr_[_pID].affId].inviteCode;
       
@@ -161,21 +158,6 @@ returns(uint256 affid,address addr,uint256 totalBet,uint256 level,uint256 _zypot
 }
 
 
-function somethingmsg () 
-public
-view
-returns(uint256 _withdrawPt,uint8 _withdrawCcMax,uint256 _withdrawRate,uint256 _withrawBetmin,uint256 _minbeteth,uint256 _genReleTime)
-{
-    return(
-        withdrawPt,
-        withdrawCcMax,
-        withdrawRate,
-        withrawBetmin,
-        minbeteth_,
-        genReleTime_
-        );
-
-}
 
 
 function getsystemMsg()
